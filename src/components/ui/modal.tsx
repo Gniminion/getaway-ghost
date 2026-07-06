@@ -13,7 +13,6 @@ export function Modal(props: Props) {
     <div className="modal-overlay fixed absolute--fill flex items-center justify-center z-999" onClick={onClose}>
       <div
         className="modal-content bg-main-dark pa3 ba b--accent"
-        style={{ width: "min(300px, 90vw)", maxWidth: "90vw" }}
         onClick={(e) => e.stopPropagation()}
       >
         <Button void className="absolute right-1 top-1" text="×" onClick={onClose} />

@@ -58,7 +58,7 @@ export default function Home() {
   }
 
   return (
-    <div className="relative w-100 h-100 page-fill flex flex-column justify-center items-center pa2 pv4-l ph3-l shadow-5 br3 bg-main-dark">
+    <div className="relative w-100 page-fill flex flex-column screen-pad-x pt5 pb3 shadow-5 br3 bg-main-dark">
       {howToPlayOpen && <HowToPlayModal onClose={() => setHowToPlayOpen(false)} />}
 
       <Head>
@@ -70,23 +70,23 @@ export default function Home() {
         <LanguageSelector outlined />
       </div>
 
-      <div className="flex-grow-1 flex flex-column justify-center items-center w-100 pb-8">
-        <Txt size={TxtSize.LARGE} value={t("appTitle")} />
-        <span className="tc mt2 ph3" style={{ maxWidth: "24rem" }}>
+      <div className="flex-grow-1 flex flex-column justify-center items-center w-100 pb3">
+        <Txt className="tc" size={TxtSize.LARGE} value={t("appTitle")} />
+        <span className="tc mt2 content-narrow">
           {t("tagline")}
         </span>
 
-        <main className="flex flex-column mt4">
+        <main className="flex flex-column items-center mt4 w-100 content-narrow">
           <Button
             primary
-            className="mb4"
+            className="mb4 w-100"
             id="new-game"
             size={ButtonSize.LARGE}
             text={t("newGame")}
             onClick={onNewGame}
           />
           <Button
-            className="mb4"
+            className="mb4 w-100"
             id="join-game"
             size={ButtonSize.LARGE}
             text={t("joinGame")}
@@ -94,7 +94,7 @@ export default function Home() {
           />
           {canRejoin && (
             <Button
-              className="mb4"
+              className="mb4 w-100"
               id="rejoin-game"
               size={ButtonSize.LARGE}
               text={t("continueGame")}
@@ -103,6 +103,7 @@ export default function Home() {
           )}
           <Button
             outlined
+            className="w-100"
             id="how-to-play"
             size={ButtonSize.LARGE}
             text={t("howToPlay")}

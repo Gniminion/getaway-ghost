@@ -13,8 +13,8 @@ const TxtSizes = {
   [TxtSize.XXSMALL]: "f8 f7-l",
   [TxtSize.XSMALL]: "f7 f6-l",
   [TxtSize.SMALL]: "f6 f5-l",
-  [TxtSize.MEDIUM]: "f5 f4-l",
-  [TxtSize.LARGE]: "ttu f2 f1-l tracked",
+  [TxtSize.MEDIUM]: "font-title f5 f4-l",
+  [TxtSize.LARGE]: "font-title ttu f2 f1-l tracked",
 };
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {

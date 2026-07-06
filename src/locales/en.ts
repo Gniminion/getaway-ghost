@@ -23,7 +23,7 @@ export const en = {
   copied: "Copied!",
 
   setupPhase: "Arrange your ghosts",
-  setupHint: "Tap your ghosts to toggle good (blue) or evil (red). Need 4 of each.",
+  setupHint: "Tap your ghosts to toggle good (blue) or evil (red). Need 4 of each, then click ready",
   setupTimer: "{{seconds}}s remaining",
   ready: "Ready",
   waitingForOpponent: "Waiting for opponent...",
@@ -38,7 +38,7 @@ export const en = {
   rps_scissors: "Scissors",
   rpsTie: "Tie! Choose again.",
 
-  yourTurn: "Your turn",
+  yourTurn: "Your turn, select a ghost to move",
   opponentTurn: "{{name}}'s turn",
   yourCaptures: "Your captures",
   opponentCaptures: "Opponent captures",

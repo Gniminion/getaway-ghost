@@ -7,6 +7,12 @@ export default function Document() {
       <Head>
         <link href="/static/favicon.ico" rel="icon" />
         <link href="/static/manifest.json" rel="manifest" />
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link crossOrigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <body>
         <Main />

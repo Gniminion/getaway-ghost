@@ -27,11 +27,11 @@ export default function ResultScreen(props: Props) {
   const won = game.winner === playerIndex;
 
   return (
-    <div className="flex flex-column items-center justify-center w-100 h-100 pa3">
+    <div className="flex flex-column items-center justify-center w-100 flex-grow-1 pv3">
       <Txt size={TxtSize.LARGE} value={won ? t("youWin") : t("youLose")} />
       <Txt className="mt2 tc" value={resultDetail(won, game.winReason, t)} />
 
-      <div className="mt4 w-100" style={{ maxWidth: "20rem" }}>
+      <div className="mt4 w-100 content-result">
         <CaptureZone game={game} side="top" viewerIndex={playerIndex} />
         <CaptureZone game={game} side="bottom" viewerIndex={playerIndex} />
       </div>

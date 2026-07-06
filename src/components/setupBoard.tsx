@@ -49,7 +49,7 @@ export default function SetupBoard(props: Props) {
   }
 
   return (
-    <div className="flex flex-column items-center w-100 pa3">
+    <div className="flex flex-column items-center w-100 pv3">
       <Txt size={TxtSize.MEDIUM} value={t("setupPhase")} />
       <Txt className="mt1 tc" value={t("setupHint")} />
       <Txt className="mt2 txt-accent" value={t("setupTimer", { seconds: secondsLeft })} />

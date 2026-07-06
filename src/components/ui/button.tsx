@@ -51,13 +51,13 @@ export default function Button(props: Props) {
 
   return (
     <button
-      className={classnames(className, ButtonSizes[size], "shadow-2 ttu tracked outline-0 lh-normal", {
+      className={classnames(className, ButtonSizes[size], "font-title shadow-2 ttu tracked outline-0 lh-normal", {
         "bn": !outlined,
         "pointer": !disabled,
         "o-80": disabled,
-        "bg-cta shadow-light": primary,
+        "bg-cta": primary,
         "bg-transparent ba b--white near-white": outlined,
-        "main-dark": !disabled && !void_ && !outlined,
+        "black": !disabled && !void_ && !outlined && !primary,
         "bg-transparent near-white": void_,
       })}
       disabled={disabled}

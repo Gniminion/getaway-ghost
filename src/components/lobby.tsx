@@ -52,7 +52,7 @@ export default function Lobby(props: Props) {
   }
 
   return (
-    <div className="page-fill relative flex items-center justify-center">
+    <div className="page-fill relative flex items-center justify-center screen-pad-x pv3">
       <HomeButton className="absolute top-1 right-1" />
 
       <Head>
@@ -61,14 +61,13 @@ export default function Lobby(props: Props) {
 
       {copied && (
         <div
-          className="fixed z-999 bg-white black ph3 pv2 br2 shadow-2 f6 fw5"
-          style={{ top: "1rem", left: "50%", transform: "translateX(-50%)" }}
+          className="fixed z-999 bg-white black ph3 pv2 br2 shadow-2 f6 fw5 toast-notice"
         >
           {t("copied")}
         </div>
       )}
 
-      <div className="flex flex-column items-center w-100 pa2" style={{ maxWidth: "24rem" }}>
+      <div className="flex flex-column items-center w-100 content-narrow">
         {game.players.length > 0 && (
           <div className="mb3 w-100 tc">
             <Txt value={gameFull ? t("gameFull") : t("waitingForPlayers", { count: game.players.length })} />

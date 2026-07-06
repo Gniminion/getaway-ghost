@@ -55,7 +55,7 @@ export default function GameBoard(props: Props) {
   }
 
   return (
-    <div className="flex flex-column items-center w-100 pa2">
+    <div className="flex flex-column items-center w-100 pv2">
       <CaptureZone game={game} side="top" viewerIndex={playerIndex} />
 
       <Txt

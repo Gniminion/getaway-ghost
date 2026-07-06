@@ -24,7 +24,7 @@ export default function MenuArea(props: Props) {
 
   return (
     <Modal onClose={onClose}>
-      <div className="flex flex-column items-center pa2">
+      <div className="flex flex-column items-center w-100 pa2">
         <Txt className="ttu txt-accent mb4" size={TxtSize.MEDIUM} value={t("appTitle")} />
         <div className="mb4">
           <LanguageSelector outlined />

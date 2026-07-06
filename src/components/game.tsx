@@ -63,13 +63,13 @@ export function Game(props: Props) {
   const playerIndex = self?.index ?? 0;
 
   return (
-    <div className="game bg-main-dark relative flex flex-column w-100 h-100 overflow-y-auto">
+    <div className="game page-fill bg-main-dark relative flex flex-column w-100 overflow-y-auto screen-pad-x">
       {menuOpen && <MenuArea onClose={() => setMenuOpen(false)} />}
 
       {game.status === IGameStatus.LOBBY && <Lobby host={host} onJoinGame={onJoinGame} onStartGame={onStartGame} />}
 
       {game.status !== IGameStatus.LOBBY && (
-        <div className="pa2 flex justify-end">
+        <div className="pv2 flex justify-end">
           <HomeButton onClick={() => setMenuOpen(true)} />
         </div>
       )}

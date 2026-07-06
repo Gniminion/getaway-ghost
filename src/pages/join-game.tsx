@@ -31,10 +31,10 @@ export default function JoinGame() {
   }
 
   return (
-    <div className="page-fill w-100 h-100 flex justify-center items-center relative bg-main-dark pa2 pv4-l ph3-l shadow-5 br3">
+    <div className="page-fill w-100 flex justify-center items-center relative bg-main-dark screen-pad-x pv4 shadow-5 br3">
       <HomeButton className="absolute top-1 right-1" />
 
-      <div className="flex flex-column items-center w-100" style={{ maxWidth: "24rem" }}>
+      <div className="flex flex-column items-center w-100 content-narrow">
         <Txt size={TxtSize.LARGE} value={t("joinGame")} />
         <Txt className="mt2 tc" value={t("joinHint")} />
 
@@ -46,7 +46,7 @@ export default function JoinGame() {
             value={code}
             onChange={(e) => setCode(e.target.value)}
           />
-          <Button primary disabled={!code.trim()} size={ButtonSize.LARGE} text={t("join")} />
+          <Button primary className="w-100" disabled={!code.trim()} size={ButtonSize.LARGE} text={t("join")} />
         </form>
       </div>
     </div>

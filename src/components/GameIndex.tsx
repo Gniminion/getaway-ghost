@@ -18,7 +18,6 @@ function SsrFreeGameIndex(props: Props) {
   const online = useConnectivity();
   const router = useRouter();
 
-  /** Subscribe to real-time Firebase updates for this game */
   useEffect(() => {
     if (!online) return;
 

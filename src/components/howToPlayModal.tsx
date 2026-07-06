@@ -13,9 +13,9 @@ export default function HowToPlayModal(props: Props) {
 
   return (
     <Modal onClose={onClose}>
-      <div className="flex flex-column pa2" style={{ maxWidth: "28rem" }}>
+      <div className="flex flex-column pa2 content-modal">
         <Txt className="ttu txt-accent mb3" size={TxtSize.MEDIUM} value={t("howToPlay")} />
-        <Txt className="f6 mh-30vh overflow-auto" value={t("howToPlayText")} />
+        <Txt className="font-mono f6 mh-30vh overflow-auto" value={t("howToPlayText")} />
       </div>
     </Modal>
   );

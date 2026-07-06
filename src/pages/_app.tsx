@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { I18nextProvider, useTranslation } from "react-i18next";
 import Txt, { TxtSize } from "~/components/ui/txt";
+import GhostCursor from "~/components/ghostCursor";
 import useConnectivity from "~/hooks/connectivity";
 import { i18n } from "~/lib/i18n";
 import { logFailedPromise } from "~/lib/errors";
@@ -39,6 +40,7 @@ function GetawayGhost({ Component, pageProps }: AppProps) {
       </Head>
 
       <div className="app-shell">
+        <GhostCursor />
         {/* Offline indicator */}
         {!online && showOffline && (
           <div className="relative flex items-center justify-center bg-red shadow-4 b--red ba pa2 z-99">

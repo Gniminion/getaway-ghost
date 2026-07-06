@@ -1,22 +1,41 @@
 :root {
-  /* Colors */
-  --color-bg: #0a1a0f;
-  --color-surface: #1a3d24;
-  --color-surface-exit: #2a1a4a;
-  --color-grid-bg: #0f2a18;
+  /* Greens */
+  --color-bg: #031008;
+  --color-surface: #081c10;
+  --color-surface-exit: #180e2e;
+  --color-grid-bg: #040e09;
+
+  /* UI */
   --color-border: #f4f6f7;
   --color-text: #f4f6f7;
+  --color-white: #ffffff;
+  --color-button-bg: #ffffff;
   --color-red: #ec7063;
   --color-blue: #5dade2;
   --color-accent: #52be80;
   --color-purple: #805ad5;
 
-  /* Spacing */
-  --space-cell: clamp(2.25rem, 11vw, 2.75rem);
+  /* Cursor */
+  --color-cursor-core: #ffffff;
+  --color-cursor-glow: #a8e6c3;
+  --color-cursor-shadow: #52be80;
+  --cursor-size: 18px;
+
+  /* Overlays */
+  --overlay-modal: rgb(0 0 0 / 0.6);
+
+  /* Layout */
+  --page-padding-x: 1rem;
+  --content-max-width: 24rem;
+  --content-modal-width: 28rem;
+  --content-result-width: 20rem;
+  --modal-width: min(300px, 90vw);
+  --space-cell: clamp(2.5rem, 12.5vw, 3.25rem);
   --space-board-gap: 2px;
   --space-board-pad: 4px;
 
   /* Typography */
   --font-mono: "Courier New", Courier, monospace;
+  --font-title: "Silkscreen", sans-serif;
   --font-size-label: clamp(0.5rem, 2.5vw, 0.65rem);
 }

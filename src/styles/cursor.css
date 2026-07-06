@@ -1,0 +1,27 @@
+.ghost-cursor-wisp {
+  position: fixed;
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  margin: calc(var(--cursor-size) / -2) 0 0 calc(var(--cursor-size) / -2);
+  pointer-events: none;
+  z-index: 10000;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--color-cursor-core) 0 18%,
+    var(--color-cursor-glow) 18% 62%,
+    transparent 63%
+  );
+  box-shadow: 0 0 14px var(--color-cursor-shadow);
+}
+
+body.ghost-cursor-active,
+body.ghost-cursor-active a,
+body.ghost-cursor-active button,
+body.ghost-cursor-active input,
+body.ghost-cursor-active select,
+body.ghost-cursor-active label,
+body.ghost-cursor-active .board-cell,
+body.ghost-cursor-active .pointer {
+  cursor: none !important;
+}

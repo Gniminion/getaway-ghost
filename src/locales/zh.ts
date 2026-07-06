@@ -6,10 +6,10 @@ export const zh = {
 
   newGame: "新游戏",
   joinGame: "加入游戏",
-  joinHint: "粘贴游戏链接或输入分享码。",
-  joinPlaceholder: "HappyBlueFox 或 https://...",
+  joinHint: "粘贴游戏链接或输入分享码",
+  joinPlaceholder: "输入分享码：HappyBlueFox 或 https://...",
   continueGame: "重进游戏",
-  shareHint: "将链接分享给对手即可开始。",
+  shareHint: "把链接分享给对手即可开始游戏",
 
   lobby: "大厅",
   gameFull: "人齐了！",
@@ -23,7 +23,7 @@ export const zh = {
   copied: "已复制！",
 
   setupPhase: "布置幽灵",
-  setupHint: "点击你的幽灵切换好（蓝）/ 坏（红），各需要 4 个。",
+  setupHint: "点击你的幽灵切换好（蓝）/ 坏（红），各需要 4 个，然后点击准备就绪",
   setupTimer: "剩余 {{seconds}} 秒",
   ready: "准备就绪",
   waitingForOpponent: "等待对手...",
