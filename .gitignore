@@ -1,0 +1,15 @@
+.idea
+.env
+.env.local
+.env.*.local
+.next
+node_modules
+.DS_Store
+*.tsbuildinfo
+firebase-debug.log
+ui-debug.log
+
+.now
+.vercel
+Notes
+

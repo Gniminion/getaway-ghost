@@ -1,0 +1,22 @@
+:root {
+  /* Colors */
+  --color-bg: #0a1a0f;
+  --color-surface: #1a3d24;
+  --color-surface-exit: #2a1a4a;
+  --color-grid-bg: #0f2a18;
+  --color-border: #f4f6f7;
+  --color-text: #f4f6f7;
+  --color-red: #ec7063;
+  --color-blue: #5dade2;
+  --color-accent: #52be80;
+  --color-purple: #805ad5;
+
+  /* Spacing */
+  --space-cell: 2.75rem;
+  --space-board-gap: 2px;
+  --space-board-pad: 4px;
+
+  /* Typography */
+  --font-mono: "Courier New", Courier, monospace;
+  --font-size-label: 0.65rem;
+}

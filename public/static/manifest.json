@@ -1,0 +1,9 @@
+{
+  "short_name": "Getaway Ghost",
+  "name": "Getaway Ghost",
+  "description": "Deduction board game based on Ghosts released in 1982 by Milton Bradley",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#001030",
+  "background_color": "#001030"
+}
