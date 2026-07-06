@@ -12,11 +12,11 @@
   --color-purple: #805ad5;
 
   /* Spacing */
-  --space-cell: 2.75rem;
+  --space-cell: clamp(2.25rem, 11vw, 2.75rem);
   --space-board-gap: 2px;
   --space-board-pad: 4px;
 
   /* Typography */
   --font-mono: "Courier New", Courier, monospace;
-  --font-size-label: 0.65rem;
+  --font-size-label: clamp(0.5rem, 2.5vw, 0.65rem);
 }

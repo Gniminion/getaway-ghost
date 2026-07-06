@@ -5,7 +5,6 @@ import {
   homeRows,
   isExitFor,
   isInsideBoard,
-  opponentExitCells,
   SETUP_MS,
   WIN_COUNT,
   Direction,
@@ -13,11 +12,6 @@ import {
 import IGameState, { IAction, IGhost, IGameOptions, IGameStatus, IPlayer, RpsChoice, WinReason } from "./state";
 
 export type { Direction } from "./board";
-
-export interface MoveResult {
-  success: boolean;
-  error?: string;
-}
 
 function clonePlayers(players: IPlayer[]): IPlayer[] {
   return players.map((p) => ({ ...p }));
@@ -107,10 +101,6 @@ export function newGame(options: IGameOptions): IGameState {
     createdAt: Date.now(),
     synced: false,
   };
-}
-
-export function joinGame(state: IGameState, player: IPlayer): IGameState {
-  return { ...state, players: [...state.players, player] };
 }
 
 export function beginSetup(state: IGameState): IGameState {
@@ -241,7 +231,25 @@ export function checkRpsTimeout(state: IGameState): IGameState {
     rpsChoice: p.rpsChoice ?? ("rock" as RpsChoice),
   }));
 
-  return resolveRps({ ...state, players, synced: false });
+  const withChoices = { ...state, players, synced: false };
+  const [a, b] = withChoices.players;
+  if (!a?.rpsChoice || !b?.rpsChoice) return state;
+
+  const result = rpsWinner(a.rpsChoice, b.rpsChoice);
+  if (result !== null) {
+    const winner = result === 0 ? a : b;
+    return {
+      ...withChoices,
+      status: IGameStatus.ONGOING,
+      currentPlayer: winner.index,
+    };
+  }
+
+  return {
+    ...withChoices,
+    status: IGameStatus.ONGOING,
+    currentPlayer: state.rpsDeadline % 2,
+  };
 }
 
 function submitRps(state: IGameState, playerIndex: number, choice: RpsChoice): IGameState {

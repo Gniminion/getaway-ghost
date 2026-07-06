@@ -9,21 +9,40 @@ import Txt, { TxtSize } from "~/components/ui/txt";
 import useLocalStorage from "~/hooks/localStorage";
 import { newGame } from "~/lib/actions";
 import { logFailedPromise } from "~/lib/errors";
-import { createGame } from "~/lib/firebase";
+import { createGame, loadGame } from "~/lib/firebase";
 import { generateShuffleSeed, nextGameId } from "~/lib/id";
-import { GameMode } from "~/lib/state";
+import { GameMode, IGameStatus } from "~/lib/state";
 
 export default function Home() {
   const router = useRouter();
   const { t } = useTranslation();
-  const [gameId] = useLocalStorage("gameId", null);
+  const [gameId, setGameId] = useLocalStorage("gameId", null);
   const [mounted, setMounted] = useState(false);
+  const [canRejoin, setCanRejoin] = useState(false);
   const [howToPlayOpen, setHowToPlayOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
     router.prefetch("/join-game").catch(logFailedPromise);
   }, [router]);
+
+  useEffect(() => {
+    if (!mounted || !gameId) {
+      setCanRejoin(false);
+      return;
+    }
+
+    loadGame(gameId)
+      .then((game) => {
+        if (!game?.id || game.status === IGameStatus.OVER) {
+          setGameId(null);
+          setCanRejoin(false);
+        } else {
+          setCanRejoin(true);
+        }
+      })
+      .catch(logFailedPromise);
+  }, [mounted, gameId, setGameId]);
 
   async function onNewGame() {
     const id = nextGameId();
@@ -39,7 +58,7 @@ export default function Home() {
   }
 
   return (
-    <div className="relative w-100 h-100 flex flex-column justify-center items-center pa2 pv4-l ph3-l shadow-5 br3 bg-main-dark">
+    <div className="relative w-100 h-100 page-fill flex flex-column justify-center items-center pa2 pv4-l ph3-l shadow-5 br3 bg-main-dark">
       {howToPlayOpen && <HowToPlayModal onClose={() => setHowToPlayOpen(false)} />}
 
       <Head>
@@ -47,15 +66,17 @@ export default function Home() {
         <meta content={t("tagline")} name="description" />
       </Head>
 
-      <div className="absolute top-1 right-2">
+      <div className="absolute top-1 right-2 z-1">
         <LanguageSelector outlined />
       </div>
 
-      <div className="flex flex-column items-center">
+      <div className="flex-grow-1 flex flex-column justify-center items-center w-100 pb-8">
         <Txt size={TxtSize.LARGE} value={t("appTitle")} />
-        <span className="tc mt2">{t("tagline")}</span>
+        <span className="tc mt2 ph3" style={{ maxWidth: "24rem" }}>
+          {t("tagline")}
+        </span>
 
-        <main className="flex flex-column mt5">
+        <main className="flex flex-column mt4">
           <Button
             primary
             className="mb4"
@@ -71,7 +92,7 @@ export default function Home() {
             text={t("joinGame")}
             onClick={() => router.push("/join-game").catch(logFailedPromise)}
           />
-          {mounted && gameId && (
+          {canRejoin && (
             <Button
               className="mb4"
               id="rejoin-game"
@@ -89,6 +110,8 @@ export default function Home() {
           />
         </main>
       </div>
+
+      <Txt className="flex-shrink-0 w-100 tc pb2" size={TxtSize.XSMALL} value={t("credits")} />
     </div>
   );
 }

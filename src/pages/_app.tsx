@@ -34,11 +34,11 @@ function GetawayGhost({ Component, pageProps }: AppProps) {
         <title>{t("appTitle")}</title>
         <meta charSet="utf-8" />
         <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport" />
         <meta content={t("tagline")} name="description" />
       </Head>
 
-      <div className="aspect-ratio--object">
+      <div className="app-shell">
         {/* Offline indicator */}
         {!online && showOffline && (
           <div className="relative flex items-center justify-center bg-red shadow-4 b--red ba pa2 z-99">

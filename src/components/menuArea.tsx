@@ -27,21 +27,21 @@ export default function MenuArea(props: Props) {
       <div className="flex flex-column items-center pa2">
         <Txt className="ttu txt-accent mb4" size={TxtSize.MEDIUM} value={t("appTitle")} />
         <div className="mb4">
-          <LanguageSelector />
+          <LanguageSelector outlined />
         </div>
         <Button
+          outlined
           className="mb3 w-100"
-          size={ButtonSize.MEDIUM}
+          size={ButtonSize.LARGE}
           text={t("howToPlay")}
           onClick={() => setHowToPlayOpen(true)}
         />
         <Button
-          className="mb3 w-100"
+          className="w-100"
           size={ButtonSize.MEDIUM}
           text={t("backToHome")}
           onClick={() => router.push("/").catch(logFailedPromise)}
         />
-        <Button className="w-100" size={ButtonSize.MEDIUM} text={t("close")} onClick={onClose} />
       </div>
     </Modal>
   );

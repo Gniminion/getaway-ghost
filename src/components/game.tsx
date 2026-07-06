@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import GameBoard from "~/components/gameBoard";
 import HomeButton from "~/components/homeButton";
@@ -31,6 +31,12 @@ export function Game(props: Props) {
   const [, setGameId] = useLocalStorage("gameId", null);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    if (game.status === IGameStatus.OVER) {
+      setGameId(null);
+    }
+  }, [game.status, setGameId]);
+
   function persist(next: IGameState) {
     onGameChange(next);
     updateGame(next).catch(logFailedPromise);
@@ -57,7 +63,7 @@ export function Game(props: Props) {
   const playerIndex = self?.index ?? 0;
 
   return (
-    <div className="game bg-main-dark relative flex flex-column w-100 h-100">
+    <div className="game bg-main-dark relative flex flex-column w-100 h-100 overflow-y-auto">
       {menuOpen && <MenuArea onClose={() => setMenuOpen(false)} />}
 
       {game.status === IGameStatus.LOBBY && <Lobby host={host} onJoinGame={onJoinGame} onStartGame={onStartGame} />}

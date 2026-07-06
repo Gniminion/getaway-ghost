@@ -64,6 +64,12 @@ export default function BoardGrid(props: Props) {
             else if (onCellClick) onCellClick(gameRow, gameCol);
           }}
         >
+          {(myExit) && (
+            <span className="board-cell__getaway" aria-hidden="true">
+              <span>GET</span>
+              <span>AWAY</span>
+            </span>
+          )}
           {ghost && (
             <GhostDot selected={ghost.id === selectedId} type={visibleType(ghost, viewerIndex)} onClick={undefined} />
           )}
@@ -86,13 +92,11 @@ export default function BoardGrid(props: Props) {
 
   return (
     <div className="board-wrap">
-      <span className="getaway-label getaway-label--left">GETAWAY</span>
-      <span className="getaway-label getaway-label--right">GETAWAY</span>
       <div className="board-layout">
-        <div className="board-layout__corner" />
-        <div className="board-layout__files">{fileLabels}</div>
         <div className="board-layout__ranks">{rankLabels}</div>
         <div className="board-grid">{cells}</div>
+        <div className="board-layout__corner" />
+        <div className="board-layout__files">{fileLabels}</div>
       </div>
     </div>
   );

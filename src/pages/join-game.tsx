@@ -31,7 +31,7 @@ export default function JoinGame() {
   }
 
   return (
-    <div className="w-100 h-100 flex justify-center items-center relative bg-main-dark pa2 pv4-l ph3-l shadow-5 br3">
+    <div className="page-fill w-100 h-100 flex justify-center items-center relative bg-main-dark pa2 pv4-l ph3-l shadow-5 br3">
       <HomeButton className="absolute top-1 right-1" />
 
       <div className="flex flex-column items-center w-100" style={{ maxWidth: "24rem" }}>

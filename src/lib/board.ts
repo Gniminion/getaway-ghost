@@ -87,8 +87,3 @@ export function directionBetween(
   if (toRow === fromRow && toCol === fromCol + 1) return "right";
   return null;
 }
-
-export function escapeDirection(playerIndex: number, row: number, col: number): Direction | null {
-  if (!isExitFor(playerIndex, row, col)) return null;
-  return playerIndex === 0 ? "down" : "up";
-}

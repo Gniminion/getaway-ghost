@@ -63,7 +63,7 @@ export default function RpsPhase(props: Props) {
       {isTie && <Txt className="mt3 txt-accent" value={t("rpsTie")} />}
 
       {!picked && (
-        <div className="flex mt4">
+        <div className="flex flex-wrap justify-center mt4 w-100">
           {CHOICES.map((c) => (
             <Button key={c} className="ma2" text={t(`rps_${c}`)} onClick={() => choose(c)} />
           ))}

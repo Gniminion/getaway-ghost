@@ -1,7 +1,7 @@
 export const zh = {
   appTitle: "幽灵逃脱",
   tagline: "基于 1982 年 Milton Bradley 发行的 Ghosts 改编的推理桌游",
-  offline: "你已离线！",
+  offline: "你已离线",
   loading: "加载中...",
 
   newGame: "新游戏",
@@ -40,17 +40,17 @@ export const zh = {
 
   yourTurn: "你的回合",
   opponentTurn: "{{name}} 的回合",
-  yourCaptures: "你的捕获",
-  opponentCaptures: "对手捕获",
+  yourCaptures: "你捕获的幽灵",
+  opponentCaptures: "对手捕获的幽灵",
 
-  youWin: "你赢了！",
-  youLose: "你输了！",
-  winEscape: "你的好幽灵成功逃脱！",
-  loseEscape: "对手的好幽灵逃脱了。",
-  winCapturedGood: "你捕获了4个好幽灵。",
-  loseCapturedGood: "对手捕获了你的4个好幽灵。",
-  winCapturedEvil: "对手捕获了4个坏幽灵。",
-  loseCapturedEvil: "你捕获了4个坏幽灵。",
+  youWin: "你赢了",
+  youLose: "你输了",
+  winEscape: "你的好幽灵成功逃脱 :D",
+  loseEscape: "对手的好幽灵逃脱了 :[",
+  winCapturedGood: "你捕获了4个好幽灵! :D",
+  loseCapturedGood: "对手捕获了你的4个好幽灵 :[",
+  winCapturedEvil: "对手捕获了4个坏幽灵！你的好幽灵逃脱了 :D",
+  loseCapturedEvil: "你捕获了4个坏幽灵，它们将永远缠着你 :[",
   winner: "胜者：{{name}}",
   gameOver: "游戏结束",
   spectating: "观战中...",
@@ -65,4 +65,5 @@ export const zh = {
   pageNotFound: "页面未找到",
   somethingWentWrong: "出了点问题",
   backToMenu: "返回主菜单",
+  credits: "By Gniminion, for UW GameJam 2026.",
 };

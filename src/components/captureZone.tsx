@@ -28,7 +28,7 @@ export default function CaptureZone(props: Props) {
         {captured.map((g) => (
           <GhostDot key={g.id} size={14} type={visibleType(g, viewerIndex)} />
         ))}
-        {captured.length === 0 && <Txt className="f6" value="—" />}
+        {captured.length === 0 && <Txt className="f6" value=":" />}
       </div>
     </div>
   );

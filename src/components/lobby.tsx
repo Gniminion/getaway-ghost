@@ -2,9 +2,10 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { FormEvent, useState } from "react";
 import { useTranslation } from "react-i18next";
+import HomeButton from "~/components/homeButton";
 import Button from "~/components/ui/button";
 import { TextInput } from "~/components/ui/forms";
-import Txt, { TxtSize } from "~/components/ui/txt";
+import Txt from "~/components/ui/txt";
 import { useGame } from "~/hooks/game";
 import { useSession } from "~/hooks/session";
 
@@ -51,11 +52,11 @@ export default function Lobby(props: Props) {
   }
 
   return (
-    <div className="flex items-center justify-center h-100 w-100 pa2">
+    <div className="page-fill relative flex items-center justify-center">
+      <HomeButton className="absolute top-1 right-1" />
+
       <Head>
-        <title>
-          {t("appTitle")} · {t("lobby")}
-        </title>
+        <title>{t("appTitle")}</title>
       </Head>
 
       {copied && (
@@ -68,14 +69,12 @@ export default function Lobby(props: Props) {
       )}
 
       <div className="flex flex-column items-center w-100 pa2" style={{ maxWidth: "24rem" }}>
-        <Txt className="mb3 ttu" size={TxtSize.MEDIUM} value={t("lobby")} />
-
         {game.players.length > 0 && (
           <div className="mb3 w-100 tc">
             <Txt value={gameFull ? t("gameFull") : t("waitingForPlayers", { count: game.players.length })} />
             {game.players.map((p) => (
               <div key={p.id} className="mt1">
-                <Txt value={`· ${p.name}${p.id === playerId ? ` (${t("you")})` : ""}`} />
+                <Txt value={`${p.name}${p.id === playerId ? ` (${t("you")})` : ""}`} />
               </div>
             ))}
           </div>
@@ -102,7 +101,7 @@ export default function Lobby(props: Props) {
         {!gameFull && (
           <div className="flex flex-column items-center mt4 w-100">
             <Txt className="mb2 tc" value={t("shareGame")} />
-            <a className="mb2 tc break-word" href={shareLink} rel="noopener noreferrer" target="_blank">
+            <a className="mb2 tc break-word white" href={shareLink} rel="noopener noreferrer" target="_blank">
               <Txt value={shareLink} />
             </a>
             <input ref={inputRef} readOnly className="fixed top--2 left--2" type="text" value={shareLink} />
