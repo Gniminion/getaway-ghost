@@ -1,6 +1,6 @@
 export const en = {
   appTitle: "Getaway Ghost",
-  tagline: "Online board game based on Ghosts released in 1982 by Milton Bradley",
+  tagline: "An online bluffing board game based on the board game Ghosts released in 1982",
   offline: "You are offline!",
   loading: "Loading...",
 
@@ -58,7 +58,7 @@ export const en = {
   menu: "Menu",
   howToPlay: "How to play",
   howToPlayText:
-    "Both players are given eight ghosts, of which four are good (marked by blue) and four are evil (marked by red). At each of the four corners is an getaway exit. The players can arrange the good and evil ghosts how they wish at the start of the game.\n\nThe game is turn-based. On their turn, each player moves one ghost one square, either up, down, left or right. A ghost may capture an opponent's ghost by moving to its square. Only when a ghost is captured does the opposing player know whether it is good or evil.\n\nIf a player captures all four of the opposing player's good ghosts, they win the game. But if a player captures all four of the opposing player's evil ghosts, they lose the game. The game can also be won by moving one of the good ghosts through one of the getaway exits at the opposing side of the board.\n\n(Credit : Wikipedia)",
+    "Both players are given eight ghosts, of which four are good (marked by blue) and four are evil (marked by red). At each of the four corners is an getaway exit. The players can arrange the good and evil ghosts how they wish at the start of the game.\n\nThe game is turn-based. On their turn, each player moves one ghost one square, either up, down, left or right. A ghost may capture an opponent's ghost by moving to its square. Only when a ghost is captured does the opposing player know whether it is good or evil.\n\nIf a player captures all four of the opposing player's good ghosts, they win the game. But if a player captures all four of the opposing player's evil ghosts, they lose the game. The game can also be won by moving one of the good ghosts through one of the getaway exits at the opposing side of the board.\n\n(Credit : Wikipedia, Ghost board game designed by Alex Randolph, released by Milton Bradley)",
   backToHome: "Back to home",
   close: "Close",
 

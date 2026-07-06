@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import HowToPlayModal from "~/components/howToPlayModal";
+import GhostIcon from "~/components/ghostIcon";
 import LanguageSelector from "~/components/languageSelector";
 import Button, { ButtonSize } from "~/components/ui/button";
 import Txt, { TxtSize } from "~/components/ui/txt";
@@ -71,7 +72,10 @@ export default function Home() {
       </div>
 
       <div className="flex-grow-1 flex flex-column justify-center items-center w-100 pb3">
-        <Txt className="tc" size={TxtSize.LARGE} value={t("appTitle")} />
+        <div className="flex items-center justify-center">
+          <Txt size={TxtSize.LARGE} value={t("appTitle")} />
+          <GhostIcon className="ml4" size={40} type="hidden" />
+        </div>
         <span className="tc mt2 content-narrow">{t("tagline")}</span>
 
         <main className="flex flex-column items-center mt4 w-100 content-narrow">

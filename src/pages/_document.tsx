@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link href="/static/favicon.ico" rel="icon" />
+        <link href="/static/favicon.svg" rel="icon" type="image/svg+xml" />
         <link href="/static/manifest.json" rel="manifest" />
         <link href="https://fonts.googleapis.com" rel="preconnect" />
         <link crossOrigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect" />

@@ -1,6 +1,6 @@
 export const zh = {
-  appTitle: "幽灵逃脱",
-  tagline: "基于 1982 年 Milton Bradley 发行的 Ghosts 改编的推理桌游",
+  appTitle: "幽灵大逃亡",
+  tagline: "基于 1982 年发行的 Ghosts 改编的推理桌游",
   offline: "你已离线",
   loading: "加载中...",
 
@@ -32,7 +32,7 @@ export const zh = {
   unknown: "未知",
 
   rpsTitle: "石头剪刀布胜者先手",
-  rpsHint: "请选择一个。",
+  rpsHint: "请选择",
   rps_rock: "石头",
   rps_paper: "布",
   rps_scissors: "剪刀",
@@ -45,11 +45,11 @@ export const zh = {
 
   youWin: "你赢了",
   youLose: "你输了",
-  winEscape: "你的好幽灵成功逃脱 :D",
-  loseEscape: "对手的好幽灵逃脱了 :[",
+  winEscape: "你的好幽灵成功逃亡 :D",
+  loseEscape: "对手的好幽灵逃亡了 :[",
   winCapturedGood: "你捕获了4个好幽灵! :D",
   loseCapturedGood: "对手捕获了你的4个好幽灵 :[",
-  winCapturedEvil: "对手捕获了4个坏幽灵！你的好幽灵逃脱了 :D",
+  winCapturedEvil: "对手捕获了4个坏幽灵！你的好幽灵逃亡了 :D",
   loseCapturedEvil: "你捕获了4个坏幽灵，它们将永远缠着你 :[",
   winner: "胜者：{{name}}",
   gameOver: "游戏结束",
@@ -58,11 +58,11 @@ export const zh = {
   menu: "菜单",
   howToPlay: "玩法说明",
   howToPlayText:
-    "双方各获得八个幽灵，其中四个是好幽灵（蓝色标记），四个是坏幽灵（红色标记）。棋盘四个角落各有一个逃脱出口。游戏开始时，玩家可以自由安排好幽灵和坏幽灵的摆放。\n\n游戏为回合制。每回合，玩家将一只幽灵向上下左右移动一格。幽灵可以移动到对手幽灵的格子上进行捕获。只有幽灵被捕获后，对手才能知道它是好幽灵还是坏幽灵。\n\n如果玩家捕获了对手全部四个好幽灵，则获胜。但如果玩家捕获了对手全部四个坏幽灵，则失败。游戏也可以通过将一只好幽灵移动到对手一侧的出口来获胜。\n\n（来源：维基百科）",
+    "双方各获得八个幽灵，其中四个是好幽灵（蓝），四个是坏幽灵（红）。棋盘四个角落各有一个逃亡出口。游戏开始时，玩家可以自由摆放好幽灵和坏幽灵。\n\n游戏为回合制。每回合，玩家将一只幽灵向上下左右移动一格。幽灵可以移动到对手幽灵的格子上进行捕获。只有幽灵被捕获后，对手才能知道它是好幽灵还是坏幽灵。\n\n如果玩家捕获了对手全部四个好幽灵，则获胜。但如果玩家捕获了对手全部四个坏幽灵，则失败。你也可以通过将一只好幽灵移动到对手一侧的出口来获胜。\n\n（来源：维基百科，桌游设计：Alex Randolph， 桌游发布：Milton Bradley）",
   backToHome: "返回主页",
   close: "关闭",
 
-  pageNotFound: "页面未找到",
+  pageNotFound: "页面404",
   somethingWentWrong: "出了点问题",
   backToMenu: "返回主菜单",
   credits: "By Gniminion, for UW GameJam 2026.",
