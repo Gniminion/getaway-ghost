@@ -84,9 +84,7 @@ export function Game(props: Props) {
         </div>
       )}
 
-      {game.status === IGameStatus.RPS && self && (
-        <RpsPhase game={game} playerIndex={playerIndex} onUpdate={persist} />
-      )}
+      {game.status === IGameStatus.RPS && self && <RpsPhase game={game} playerIndex={playerIndex} onUpdate={persist} />}
 
       {game.status === IGameStatus.ONGOING && self && (
         <GameBoard game={game} playerIndex={playerIndex} onUpdate={persist} />

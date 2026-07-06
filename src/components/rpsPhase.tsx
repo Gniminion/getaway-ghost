@@ -27,11 +27,7 @@ export default function RpsPhase(props: Props) {
     .map((h) => h.action)
     .filter((a): a is Extract<typeof a, { action: "rps" }> => a.action === "rps");
   const lastTwo = rpsActions.slice(-2);
-  const isTie =
-    lastTwo.length === 2 &&
-    lastTwo[0].choice === lastTwo[1].choice &&
-    !picked &&
-    !opponentPicked;
+  const isTie = lastTwo.length === 2 && lastTwo[0].choice === lastTwo[1].choice && !picked && !opponentPicked;
 
   useEffect(() => {
     if (!game.rpsDeadline) return;

@@ -60,11 +60,7 @@ export default function Lobby(props: Props) {
       </Head>
 
       {copied && (
-        <div
-          className="fixed z-999 bg-white black ph3 pv2 br2 shadow-2 f6 fw5 toast-notice"
-        >
-          {t("copied")}
-        </div>
+        <div className="fixed z-999 bg-white black ph3 pv2 br2 shadow-2 f6 fw5 toast-notice">{t("copied")}</div>
       )}
 
       <div className="flex flex-column items-center w-100 content-narrow">
@@ -79,7 +75,9 @@ export default function Lobby(props: Props) {
           </div>
         )}
 
-        {canStart && <Button primary className="mb3 w-100" id="start-game" text={t("startGame")} onClick={onStartGame} />}
+        {canStart && (
+          <Button primary className="mb3 w-100" id="start-game" text={t("startGame")} onClick={onStartGame} />
+        )}
 
         {canJoin && (
           <form className="flex flex-column items-center mt3 w-100" onSubmit={onJoinSubmit}>

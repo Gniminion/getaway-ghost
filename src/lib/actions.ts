@@ -58,11 +58,7 @@ export function checkWinner(state: IGameState): number | null {
 
 function rpsWinner(a: RpsChoice, b: RpsChoice): number | null {
   if (a === b) return null;
-  if (
-    (a === "rock" && b === "scissors") ||
-    (a === "paper" && b === "rock") ||
-    (a === "scissors" && b === "paper")
-  ) {
+  if ((a === "rock" && b === "scissors") || (a === "paper" && b === "rock") || (a === "scissors" && b === "paper")) {
     return 0;
   }
   return 1;
@@ -129,7 +125,6 @@ function maybeAdvanceFromSetup(state: IGameState, players: IPlayer[]): IGameStat
     synced: false,
   };
 }
-
 
 function resolveRps(state: IGameState): IGameState {
   const [a, b] = state.players;
@@ -298,14 +293,12 @@ function applyMove(state: IGameState, playerIndex: number, ghostId: number, dire
   if (isExitFor(playerIndex, toRow, toCol) && ghost.type === "good") {
     winner = playerIndex;
     winReason = "escape";
-    ghosts = ghosts.map((g) =>
-      g.id === ghostId ? { ...g, onBoard: false, revealed: true, capturedBy: null } : g
-    );
+    ghosts = ghosts.map((g) => (g.id === ghostId ? { ...g, onBoard: false, revealed: true, capturedBy: null } : g));
   }
 
   if (winner === null) winner = checkWinner({ ...state, players, ghosts });
   if (winner !== null && winReason === null) {
-    const { capturedGood, capturedEvil } = players[winner];
+    const { capturedGood } = players[winner];
     winReason = capturedGood >= WIN_COUNT ? "capturedGood" : "capturedEvil";
   }
 

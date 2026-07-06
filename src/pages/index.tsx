@@ -72,9 +72,7 @@ export default function Home() {
 
       <div className="flex-grow-1 flex flex-column justify-center items-center w-100 pb3">
         <Txt className="tc" size={TxtSize.LARGE} value={t("appTitle")} />
-        <span className="tc mt2 content-narrow">
-          {t("tagline")}
-        </span>
+        <span className="tc mt2 content-narrow">{t("tagline")}</span>
 
         <main className="flex flex-column items-center mt4 w-100 content-narrow">
           <Button

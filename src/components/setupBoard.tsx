@@ -64,9 +64,7 @@ export default function SetupBoard(props: Props) {
         />
       </div>
 
-      {!done && (
-        <Button primary className="mt3" disabled={!canReady} text={t("ready")} onClick={finish} />
-      )}
+      {!done && <Button primary className="mt3" disabled={!canReady} text={t("ready")} onClick={finish} />}
       {done && <Txt className="mt3" value={t("waitingForOpponent")} />}
     </div>
   );

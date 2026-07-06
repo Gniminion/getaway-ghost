@@ -75,12 +75,7 @@ export function applyDirection(row: number, col: number, dir: Direction): { row:
   return { row, col: col + 1 };
 }
 
-export function directionBetween(
-  fromRow: number,
-  fromCol: number,
-  toRow: number,
-  toCol: number
-): Direction | null {
+export function directionBetween(fromRow: number, fromCol: number, toRow: number, toCol: number): Direction | null {
   if (toRow === fromRow - 1 && toCol === fromCol) return "up";
   if (toRow === fromRow + 1 && toCol === fromCol) return "down";
   if (toRow === fromRow && toCol === fromCol - 1) return "left";

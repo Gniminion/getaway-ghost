@@ -64,8 +64,8 @@ export default function BoardGrid(props: Props) {
             else if (onCellClick) onCellClick(gameRow, gameCol);
           }}
         >
-          {(myExit) && (
-            <span className="board-cell__getaway" aria-hidden="true">
+          {myExit && (
+            <span aria-hidden="true" className="board-cell__getaway">
               <span>GET</span>
               <span>AWAY</span>
             </span>

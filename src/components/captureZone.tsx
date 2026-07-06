@@ -23,7 +23,11 @@ export default function CaptureZone(props: Props) {
 
   return (
     <div className={classnames("capture-zone flex items-center", side === "top" ? "mb2" : "mt2")}>
-      <Txt className="capture-zone__label mr2" size={TxtSize.SMALL} value={t(isMine ? "yourCaptures" : "opponentCaptures")} />
+      <Txt
+        className="capture-zone__label mr2"
+        size={TxtSize.SMALL}
+        value={t(isMine ? "yourCaptures" : "opponentCaptures")}
+      />
       <div className="capture-zone__dots flex">
         {captured.map((g) => (
           <GhostDot key={g.id} size={14} type={visibleType(g, viewerIndex)} />

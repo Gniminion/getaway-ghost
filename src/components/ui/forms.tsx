@@ -1,6 +1,6 @@
 import classnames from "classnames";
 import React, { InputHTMLAttributes, ReactNode, SelectHTMLAttributes } from "react";
-import Txt, { TxtSize } from "~/components/ui/txt";
+// import Txt, { TxtSize } from "~/components/ui/txt";
 
 type InputProps = InputHTMLAttributes<HTMLInputElement>;
 

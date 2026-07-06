@@ -3,11 +3,7 @@ import "firebase/database";
 import IGameState, { cleanState, fillEmptyValues } from "~/lib/state";
 
 function databaseUrl(): string {
-  return (
-    process.env.NEXT_PUBLIC_FIREBASE_EMULATOR_URL ||
-    process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL ||
-    ""
-  );
+  return process.env.NEXT_PUBLIC_FIREBASE_EMULATOR_URL || process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL || "";
 }
 
 function database() {

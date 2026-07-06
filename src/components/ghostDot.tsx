@@ -29,10 +29,10 @@ export default function GhostDot(props: Props) {
       type="button"
       onClick={onClick}
     >
-      <svg viewBox="0 0 180 184" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-        <rect width="168" height="120" transform="translate(6)" fill={body} />
-        <rect width="40" height="40" transform="translate(30 40)" fill="var(--color-white)" />
-        <rect width="40" height="40" transform="translate(109 40)" fill="var(--color-white)" />
+      <svg fill="none" height="100%" viewBox="0 0 180 184" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <rect fill={body} height="120" transform="translate(6)" width="168" />
+        <rect fill="var(--color-white)" height="40" transform="translate(30 40)" width="40" />
+        <rect fill="var(--color-white)" height="40" transform="translate(109 40)" width="40" />
         <path d="M50 184L6.69874 109L93.3013 109L50 184Z" fill={body} />
         <path d="M90 184L46.6987 109L133.301 109L90 184Z" fill={body} />
         <path d="M130 184L86.6987 109L173.301 109L130 184Z" fill={body} />

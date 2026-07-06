@@ -36,12 +36,7 @@ export default function ResultScreen(props: Props) {
         <CaptureZone game={game} side="bottom" viewerIndex={playerIndex} />
       </div>
 
-      <Button
-        primary
-        className="mt4"
-        text={t("backToHome")}
-        onClick={() => router.push("/").catch(logFailedPromise)}
-      />
+      <Button primary className="mt4" text={t("backToHome")} onClick={() => router.push("/").catch(logFailedPromise)} />
     </div>
   );
 }
