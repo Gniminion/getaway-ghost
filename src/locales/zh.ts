@@ -57,8 +57,19 @@ export const zh = {
 
   menu: "菜单",
   howToPlay: "玩法说明",
-  howToPlayText:
-    "双方各获得八个幽灵，其中四个是好幽灵（蓝），四个是坏幽灵（红）。棋盘四个角落各有一个逃亡出口。游戏开始时，玩家可以自由摆放好幽灵和坏幽灵。\n\n游戏为回合制。每回合，玩家将一只幽灵向上下左右移动一格。幽灵可以移动到对手幽灵的格子上进行捕获。只有幽灵被捕获后，对手才能知道它是好幽灵还是坏幽灵。\n\n如果玩家捕获了对手全部四个好幽灵，则获胜。但如果玩家捕获了对手全部四个坏幽灵，则失败。你也可以通过将一只好幽灵移动到对手一侧的出口来获胜。\n\n（来源：维基百科，桌游设计：Alex Randolph， 桌游发布：Milton Bradley）",
+  howToPlay_p1a: "双方各获得八个幽灵：四个好幽灵",
+  howToPlay_p1b: "和四个坏幽灵 ",
+  howToPlay_p1c: " 棋盘四角各有一个逃亡出口",
+  howToPlay_p1d: " 开局前可自由摆放幽灵。",
+  howToPlay_p2:
+    "游戏将回合制进行，每回合你可以把一只幽灵移动一格（上下左右）。移动到对手幽灵所在格即可捕获，可得知是好幽灵还是坏幽灵。",
+  howToPlay_p3a: "捕获对手全部四个好幽灵",
+  howToPlay_p3b: " 即可获胜。",
+  howToPlay_p4a: "但若捕获了对手全部四个坏幽灵",
+  howToPlay_p4b: " 则失败。",
+  howToPlay_p5a: "你也可以将一只好幽灵移入对手一侧的逃亡出口",
+  howToPlay_p5b: " 来获胜。",
+  howToPlay_credit: "改编自 Ghost（Alex Randolph，Milton Bradley，1982）。规则来源：维基百科。",
   backToHome: "返回主页",
   close: "关闭",
 

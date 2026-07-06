@@ -1,5 +1,6 @@
 import classnames from "classnames";
 import React from "react";
+import GetawayExitIcon from "~/components/getawayExitIcon";
 import GhostDot from "~/components/ghostDot";
 import { BOARD_SIZE, COL_LABELS, displayRank, isExitFor, toGame, visibleType } from "~/lib/board";
 import { IGhost } from "~/lib/state";
@@ -64,12 +65,7 @@ export default function BoardGrid(props: Props) {
             else if (onCellClick) onCellClick(gameRow, gameCol);
           }}
         >
-          {myExit && (
-            <span aria-hidden="true" className="board-cell__getaway">
-              <span>GET</span>
-              <span>AWAY</span>
-            </span>
-          )}
+          {myExit && <GetawayExitIcon />}
           {ghost && (
             <GhostDot selected={ghost.id === selectedId} type={visibleType(ghost, viewerIndex)} onClick={undefined} />
           )}

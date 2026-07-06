@@ -57,8 +57,19 @@ export const en = {
 
   menu: "Menu",
   howToPlay: "How to play",
-  howToPlayText:
-    "Both players are given eight ghosts, of which four are good (marked by blue) and four are evil (marked by red). At each of the four corners is an getaway exit. The players can arrange the good and evil ghosts how they wish at the start of the game.\n\nThe game is turn-based. On their turn, each player moves one ghost one square, either up, down, left or right. A ghost may capture an opponent's ghost by moving to its square. Only when a ghost is captured does the opposing player know whether it is good or evil.\n\nIf a player captures all four of the opposing player's good ghosts, they win the game. But if a player captures all four of the opposing player's evil ghosts, they lose the game. The game can also be won by moving one of the good ghosts through one of the getaway exits at the opposing side of the board.\n\n(Credit : Wikipedia, Ghost board game designed by Alex Randolph, released by Milton Bradley)",
+  howToPlay_p1a: "Both players get eight ghosts: four good",
+  howToPlay_p1b: "and four evil ",
+  howToPlay_p1c: " Each corner is a getaway exit",
+  howToPlay_p1d: " Arrange them however you like before the game starts.",
+  howToPlay_p2:
+    "Take turns moving one ghost one adjacent square (up, down, left, or right). Capture an opponent's ghost by moving onto its square, where you only learn if it was good or evil after capturing it.",
+  howToPlay_p3a: "Capture all four opponent good ghosts",
+  howToPlay_p3b: " to win.",
+  howToPlay_p4a: "Capture all four opponent evil ghosts",
+  howToPlay_p4b: " and you lose.",
+  howToPlay_p5a: "Or move one of your good ghosts through a getaway exit",
+  howToPlay_p5b: " on the opponent's side of the board to win.",
+  howToPlay_credit: "Based on Ghost (Alex Randolph, Milton Bradley, 1982). Rules from Wikipedia.",
   backToHome: "Back to home",
   close: "Close",
 

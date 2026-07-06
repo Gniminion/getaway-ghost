@@ -1,0 +1,16 @@
+.how-to-play__p {
+  margin: 0 0 1rem;
+  line-height: 1.65;
+}
+
+.how-to-play__inline-icon {
+  vertical-align: middle;
+}
+
+.how-to-play__ghost-row {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  vertical-align: middle;
+  margin: 0 0.2rem;
+}
