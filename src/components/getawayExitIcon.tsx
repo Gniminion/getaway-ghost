@@ -4,7 +4,6 @@ import React, { CSSProperties } from "react";
 interface Props {
   size?: number;
   className?: string;
-  /** Standalone tile with exit background (inline / how-to-play). Board cells omit this. */
   tile?: boolean;
 }
 

@@ -51,7 +51,7 @@ export default function Button(props: Props) {
 
   return (
     <button
-      className={classnames(className, ButtonSizes[size], "font-title shadow-2 ttu tracked outline-0 lh-normal", {
+      className={classnames(className, ButtonSizes[size], "font-title shadow-2 ttu tracked outline-0 lh-normal flex items-center justify-center", {
         "bn": !outlined,
         "pointer": !disabled,
         "o-80": disabled,
@@ -60,6 +60,7 @@ export default function Button(props: Props) {
         "black": !disabled && !void_ && !outlined && !primary,
         "bg-transparent near-white": void_,
       })}
+      style={{ WebkitAppearance: "none", WebkitTapHighlightColor: "transparent" }}
       disabled={disabled}
       onClick={onClick}
       {...attributes}

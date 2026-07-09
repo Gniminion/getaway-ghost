@@ -2,10 +2,11 @@ import classnames from "classnames";
 import React from "react";
 import GetawayExitIcon from "~/components/getawayExitIcon";
 import GhostDot from "~/components/ghostDot";
-import { BOARD_SIZE, COL_LABELS, displayRank, isExitFor, toGame, visibleType } from "~/lib/board";
-import { IGhost } from "~/lib/state";
+import { BOARD_SIZE, displayRank, displayCol, isExitFor, toGame, visibleType, getPreviousMovePositions } from "~/lib/board";
+import IGameState, { IGhost } from "~/lib/state";
 
 interface Props {
+  game: IGameState;
   ghosts: IGhost[];
   viewerIndex: number;
   selectedId?: number | null;
@@ -15,10 +16,12 @@ interface Props {
   setupMode?: boolean;
   setupPlayerIndex?: number;
   onSetupToggle?: (ghostId: number) => void;
+  isSpectating?: boolean;
 }
 
 export default function BoardGrid(props: Props) {
   const {
+    game,
     ghosts,
     viewerIndex,
     selectedId,
@@ -28,6 +31,7 @@ export default function BoardGrid(props: Props) {
     setupMode,
     setupPlayerIndex,
     onSetupToggle,
+    isSpectating = false,
   } = props;
 
   function ghostAtGame(row: number, col: number) {
@@ -38,6 +42,8 @@ export default function BoardGrid(props: Props) {
     return validTargets.some((t) => t.row === gameRow && t.col === gameCol);
   }
 
+  const { from: prevFrom, to: prevTo } = getPreviousMovePositions(game, ghosts);
+
   const cells = [];
   for (let dRow = 0; dRow < BOARD_SIZE; dRow++) {
     for (let dCol = 0; dCol < BOARD_SIZE; dCol++) {
@@ -47,6 +53,9 @@ export default function BoardGrid(props: Props) {
       const oppExit = isExitFor(1 - viewerIndex, gameRow, gameCol);
       const targeted = isValidTarget(gameRow, gameCol);
       const canToggle = setupMode && ghost && ghost.owner === setupPlayerIndex;
+      const isPrevMoveFrom =
+        prevFrom && prevFrom.row === gameRow && prevFrom.col === gameCol && !setupMode;
+      const isPrevMoveTo = prevTo && prevTo.row === gameRow && prevTo.col === gameCol && !setupMode;
 
       cells.push(
         <button
@@ -56,6 +65,8 @@ export default function BoardGrid(props: Props) {
             "board-cell--exit-opp": oppExit,
             "board-cell--target": targeted,
             "board-cell--selected": ghost && ghost.id === selectedId,
+            "board-cell--prev-move-from": isPrevMoveFrom,
+            "board-cell--prev-move-to": isPrevMoveTo,
           })}
           type="button"
           onClick={() => {
@@ -67,22 +78,28 @@ export default function BoardGrid(props: Props) {
         >
           {myExit && <GetawayExitIcon />}
           {ghost && (
-            <GhostDot selected={ghost.id === selectedId} type={visibleType(ghost, viewerIndex)} onClick={undefined} />
+            <GhostDot
+              selected={ghost.id === selectedId}
+              type={visibleType(ghost, isSpectating ? -1 : viewerIndex)}
+              onClick={undefined}
+              playerLabel={isSpectating ? `p${ghost.owner + 1}` : undefined}
+              playerIndex={isSpectating ? ghost.owner : undefined}
+            />
           )}
         </button>
       );
     }
   }
 
-  const fileLabels = COL_LABELS.map((label) => (
-    <span key={label} className="board-layout__file-label">
-      {label}
+  const fileLabels = Array.from({ length: BOARD_SIZE }, (_, dCol) => (
+    <span key={dCol} className="board-layout__file-label">
+      {displayCol(dCol, viewerIndex)}
     </span>
   ));
 
   const rankLabels = Array.from({ length: BOARD_SIZE }, (_, dRow) => (
     <span key={dRow} className="board-layout__rank-label">
-      {displayRank(dRow)}
+      {displayRank(dRow, viewerIndex)}
     </span>
   ));
 

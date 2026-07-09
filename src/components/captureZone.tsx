@@ -11,26 +11,38 @@ interface Props {
   game: IGameState;
   viewerIndex: number;
   side: "top" | "bottom";
+  isSpectating?: boolean;
 }
 
 export default function CaptureZone(props: Props) {
-  const { game, viewerIndex, side } = props;
+  const { game, viewerIndex, side, isSpectating = false } = props;
   const { t } = useTranslation();
 
   const capturerIndex = side === "bottom" ? viewerIndex : 1 - viewerIndex;
   const captured = capturedGhosts(game, capturerIndex);
   const isMine = capturerIndex === viewerIndex;
+  const isP1 = capturerIndex === 0;
+
+  let labelKey: string;
+
+  if (isSpectating) {
+    labelKey = isP1 ? "p1Captures" : "p2Captures";
+  } else {
+    const prefix = isMine ? "your" : "opponent";
+    const suffix = isP1 ? "P1" : "P2";
+    labelKey = `${prefix}${suffix}Captures`;
+  }
 
   return (
     <div className={classnames("capture-zone flex items-center", side === "top" ? "mb2" : "mt2")}>
       <Txt
         className="capture-zone__label mr2"
         size={TxtSize.SMALL}
-        value={t(isMine ? "yourCaptures" : "opponentCaptures")}
+        value={t(labelKey)}
       />
       <div className="capture-zone__dots flex">
         {captured.map((g) => (
-          <GhostDot key={g.id} size={14} type={visibleType(g, viewerIndex)} />
+          <GhostDot key={g.id} size={14} type={visibleType(g, isSpectating ? -1 : viewerIndex)} />
         ))}
         {captured.length === 0 && <Txt className="f6" value=":" />}
       </div>

@@ -1,26 +1,35 @@
-import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import Button, { ButtonSize } from "~/components/ui/button";
-import { logFailedPromise } from "~/lib/errors";
+import MenuArea from "~/components/menuArea";
 
 interface Props {
-  void?: boolean;
   className?: string;
   onClick?: () => void;
 }
 
 export default function HomeButton(props: Props) {
-  const { void: void_, className, onClick } = props;
+  const { className, onClick } = props;
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const router = useRouter();
-
-  function onMenuClick() {
+  function handleClick() {
     if (onClick) {
-      return onClick();
+      onClick();
     } else {
-      router.push("/").catch(logFailedPromise);
+      setMenuOpen(true);
     }
   }
 
-  return <Button className={className} size={ButtonSize.SMALL} text="☰" void={void_} onClick={onMenuClick} />;
+  if (menuOpen && !onClick) {
+    return <MenuArea onClose={() => setMenuOpen(false)} />;
+  }
+
+  return (
+    <Button
+      className={className}
+      size={ButtonSize.SMALL}
+      text="☰"
+      onClick={handleClick}
+      style={{ aspectRatio: "1" }}
+    />
+  );
 }

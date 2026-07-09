@@ -23,7 +23,9 @@ function SsrFreeGameIndex(props: Props) {
 
     return subscribeToGame(game.id, (updatedGame) => {
       if (!updatedGame) {
-        router.push("/404");
+        router.push("/").catch(() => {
+          window.location.href = "/";
+        });
         return;
       }
       setGame({ ...updatedGame, synced: true });

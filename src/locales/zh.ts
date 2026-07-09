@@ -40,8 +40,12 @@ export const zh = {
 
   yourTurn: "你的回合",
   opponentTurn: "{{name}} 的回合",
-  yourCaptures: "你捕获的幽灵",
-  opponentCaptures: "对手捕获的幽灵",
+  yourP1Captures: "你 (p1) 捕获的幽灵",
+  yourP2Captures: "你 (p2) 捕获的幽灵",
+  opponentP1Captures: "对手 (p1) 捕获的幽灵",
+  opponentP2Captures: "对手 (p2) 捕获的幽灵",
+  p1Captures: "(p1) 捕获的幽灵",
+  p2Captures: "(p2) 捕获的幽灵",
 
   youWin: "你赢了",
   youLose: "你输了",
@@ -53,6 +57,7 @@ export const zh = {
   loseCapturedEvil: "你捕获了4个坏幽灵，它们将永远缠着你 :[",
   winner: "胜者：{{name}}",
   gameOver: "游戏结束",
+  gameEnded: "游戏已结束",
   spectating: "观战中...",
 
   menu: "菜单",

@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import HomeButton from "~/components/homeButton";
 import Button from "~/components/ui/button";
 import { TextInput } from "~/components/ui/forms";
-import Txt from "~/components/ui/txt";
+import Txt, { TxtSize } from "~/components/ui/txt";
 import { useGame } from "~/hooks/game";
 import { useSession } from "~/hooks/session";
 
@@ -53,7 +53,9 @@ export default function Lobby(props: Props) {
 
   return (
     <div className="page-fill relative flex items-center justify-center screen-pad-x pv3">
-      <HomeButton className="absolute top-1 right-1" />
+      <div className="absolute top-1 right-1">
+        <HomeButton />
+      </div>
 
       <Head>
         <title>{t("appTitle")}</title>
@@ -64,6 +66,7 @@ export default function Lobby(props: Props) {
       )}
 
       <div className="flex flex-column items-center w-100 content-narrow">
+        <Txt className="mb3" size={TxtSize.LARGE} value={t("lobby")} />
         {game.players.length > 0 && (
           <div className="mb3 w-100 tc">
             <Txt value={gameFull ? t("gameFull") : t("waitingForPlayers", { count: game.players.length })} />

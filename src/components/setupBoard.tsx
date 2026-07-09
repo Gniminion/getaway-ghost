@@ -56,6 +56,7 @@ export default function SetupBoard(props: Props) {
 
       <div className="mt3">
         <BoardGrid
+          game={game}
           ghosts={game.ghosts}
           setupMode={!done}
           setupPlayerIndex={playerIndex}

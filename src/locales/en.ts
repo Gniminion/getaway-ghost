@@ -40,8 +40,12 @@ export const en = {
 
   yourTurn: "Your turn, select a ghost to move",
   opponentTurn: "{{name}}'s turn",
-  yourCaptures: "Your captures",
-  opponentCaptures: "Opponent captures",
+  yourP1Captures: "Your (p1) captures",
+  yourP2Captures: "Your (p2) captures",
+  opponentP1Captures: "Opponent (p1) captures",
+  opponentP2Captures: "Opponent (p2) captures",
+  p1Captures: "(p1) Captures",
+  p2Captures: "(p2) Captures",
 
   youWin: "You win!",
   youLose: "You lose!",
@@ -53,6 +57,7 @@ export const en = {
   loseCapturedEvil: "You captured 4 evil ghosts. They will haunt you forever :[",
   winner: "Winner: {{name}}",
   gameOver: "Game over",
+  gameEnded: "Game ended",
   spectating: "Spectating...",
 
   menu: "Menu",

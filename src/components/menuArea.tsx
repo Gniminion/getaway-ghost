@@ -26,6 +26,7 @@ export default function MenuArea(props: Props) {
     <Modal onClose={onClose}>
       <div className="flex flex-column items-center w-100 pa2">
         <Txt className="ttu txt-accent mb4" size={TxtSize.MEDIUM} value={t("appTitle")} />
+
         <div className="mb4">
           <LanguageSelector outlined />
         </div>
@@ -38,7 +39,7 @@ export default function MenuArea(props: Props) {
         />
         <Button
           className="w-100"
-          size={ButtonSize.MEDIUM}
+          size={ButtonSize.LARGE}
           text={t("backToHome")}
           onClick={() => router.push("/").catch(logFailedPromise)}
         />

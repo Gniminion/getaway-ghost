@@ -32,7 +32,9 @@ export default function JoinGame() {
 
   return (
     <div className="page-fill w-100 flex justify-center items-center relative bg-main-dark screen-pad-x pv4 shadow-5 br3">
-      <HomeButton className="absolute top-1 right-1" />
+      <div className="absolute top-1 right-1">
+        <HomeButton />
+      </div>
 
       <div className="flex flex-column items-center w-100 content-narrow">
         <Txt size={TxtSize.LARGE} value={t("joinGame")} />

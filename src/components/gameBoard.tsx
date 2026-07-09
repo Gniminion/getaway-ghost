@@ -65,6 +65,7 @@ export default function GameBoard(props: Props) {
       />
 
       <BoardGrid
+        game={game}
         ghosts={game.ghosts}
         selectedId={selectedId}
         validTargets={validTargets}
