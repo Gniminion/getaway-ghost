@@ -93,7 +93,9 @@ export function Game(props: Props) {
           </div>
         )}
 
-        {game.status === IGameStatus.RPS && self && <RpsPhase game={game} playerIndex={playerIndex} onUpdate={persist} />}
+        {game.status === IGameStatus.RPS && self && (
+          <RpsPhase game={game} playerIndex={playerIndex} onUpdate={persist} />
+        )}
 
         {game.status === IGameStatus.RPS && !self && (
           <div className="flex items-center justify-center w-100 h-100">
@@ -105,9 +107,7 @@ export function Game(props: Props) {
           <GameBoard game={game} playerIndex={playerIndex} onUpdate={persist} />
         )}
 
-        {game.status === IGameStatus.ONGOING && !self && (
-          <SpectatorBoard game={game} />
-        )}
+        {game.status === IGameStatus.ONGOING && !self && <SpectatorBoard game={game} />}
 
         {game.status === IGameStatus.OVER && self && <ResultScreen game={game} playerIndex={playerIndex} />}
 

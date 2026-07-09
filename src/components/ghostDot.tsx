@@ -28,9 +28,11 @@ export default function GhostDot(props: Props) {
         <GhostIcon size={size} type={type} />
       </button>
       {playerLabel && (
-        <span className={classnames("ghost-label", {
-          "ghost-label--p2": playerIndex === 1,
-        })}>
+        <span
+          className={classnames("ghost-label", {
+            "ghost-label--p2": playerIndex === 1,
+          })}
+        >
           {playerLabel}
         </span>
       )}

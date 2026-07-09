@@ -24,12 +24,6 @@ export default function HomeButton(props: Props) {
   }
 
   return (
-    <Button
-      className={className}
-      size={ButtonSize.SMALL}
-      text="☰"
-      onClick={handleClick}
-      style={{ aspectRatio: "1" }}
-    />
+    <Button className={className} size={ButtonSize.SMALL} style={{ aspectRatio: "1" }} text="☰" onClick={handleClick} />
   );
 }

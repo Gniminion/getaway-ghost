@@ -115,11 +115,7 @@ export function getPreviousMovePositions(
   };
 }
 
-function reverseDirection(
-  currentRow: number,
-  currentCol: number,
-  direction: Direction
-): { row: number; col: number } {
+function reverseDirection(currentRow: number, currentCol: number, direction: Direction): { row: number; col: number } {
   if (direction === "up") return { row: currentRow + 1, col: currentCol };
   if (direction === "down") return { row: currentRow - 1, col: currentCol };
   if (direction === "left") return { row: currentRow, col: currentCol + 1 };

@@ -2,7 +2,15 @@ import classnames from "classnames";
 import React from "react";
 import GetawayExitIcon from "~/components/getawayExitIcon";
 import GhostDot from "~/components/ghostDot";
-import { BOARD_SIZE, displayRank, displayCol, isExitFor, toGame, visibleType, getPreviousMovePositions } from "~/lib/board";
+import {
+  BOARD_SIZE,
+  displayRank,
+  displayCol,
+  isExitFor,
+  toGame,
+  visibleType,
+  getPreviousMovePositions,
+} from "~/lib/board";
 import IGameState, { IGhost } from "~/lib/state";
 
 interface Props {
@@ -53,8 +61,7 @@ export default function BoardGrid(props: Props) {
       const oppExit = isExitFor(1 - viewerIndex, gameRow, gameCol);
       const targeted = isValidTarget(gameRow, gameCol);
       const canToggle = setupMode && ghost && ghost.owner === setupPlayerIndex;
-      const isPrevMoveFrom =
-        prevFrom && prevFrom.row === gameRow && prevFrom.col === gameCol && !setupMode;
+      const isPrevMoveFrom = prevFrom && prevFrom.row === gameRow && prevFrom.col === gameCol && !setupMode;
       const isPrevMoveTo = prevTo && prevTo.row === gameRow && prevTo.col === gameCol && !setupMode;
 
       cells.push(
@@ -79,11 +86,11 @@ export default function BoardGrid(props: Props) {
           {myExit && <GetawayExitIcon />}
           {ghost && (
             <GhostDot
+              playerIndex={isSpectating ? ghost.owner : undefined}
+              playerLabel={isSpectating ? `p${ghost.owner + 1}` : undefined}
               selected={ghost.id === selectedId}
               type={visibleType(ghost, isSpectating ? -1 : viewerIndex)}
               onClick={undefined}
-              playerLabel={isSpectating ? `p${ghost.owner + 1}` : undefined}
-              playerIndex={isSpectating ? ghost.owner : undefined}
             />
           )}
         </button>

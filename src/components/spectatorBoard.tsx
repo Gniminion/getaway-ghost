@@ -19,22 +19,13 @@ export default function SpectatorBoard(props: Props) {
     <div className="flex flex-column items-center w-100 pv2">
       <Txt className="mb2" value={t("spectating")} />
 
-      <CaptureZone game={game} side="top" viewerIndex={0} isSpectating={true} />
+      <CaptureZone isSpectating game={game} side="top" viewerIndex={0} />
 
-      <Txt
-        className="mb2"
-        size={TxtSize.SMALL}
-        value={t("opponentTurn", { name: currentName })}
-      />
+      <Txt className="mb2" size={TxtSize.SMALL} value={t("opponentTurn", { name: currentName })} />
 
-      <BoardGrid
-        game={game}
-        ghosts={game.ghosts}
-        viewerIndex={0}
-        isSpectating={true}
-      />
+      <BoardGrid isSpectating game={game} ghosts={game.ghosts} viewerIndex={0} />
 
-      <CaptureZone game={game} side="bottom" viewerIndex={0} isSpectating={true} />
+      <CaptureZone isSpectating game={game} side="bottom" viewerIndex={0} />
     </div>
   );
 }

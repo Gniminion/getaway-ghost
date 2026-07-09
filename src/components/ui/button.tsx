@@ -51,17 +51,22 @@ export default function Button(props: Props) {
 
   return (
     <button
-      className={classnames(className, ButtonSizes[size], "font-title shadow-2 ttu tracked outline-0 lh-normal flex items-center justify-center", {
-        "bn": !outlined,
-        "pointer": !disabled,
-        "o-80": disabled,
-        "bg-cta": primary,
-        "bg-transparent ba b--white near-white": outlined,
-        "black": !disabled && !void_ && !outlined && !primary,
-        "bg-transparent near-white": void_,
-      })}
-      style={{ WebkitAppearance: "none", WebkitTapHighlightColor: "transparent" }}
+      className={classnames(
+        className,
+        ButtonSizes[size],
+        "font-title shadow-2 ttu tracked outline-0 lh-normal flex items-center justify-center",
+        {
+          "bn": !outlined,
+          "pointer": !disabled,
+          "o-80": disabled,
+          "bg-cta": primary,
+          "bg-transparent ba b--white near-white": outlined,
+          "black": !disabled && !void_ && !outlined && !primary,
+          "bg-transparent near-white": void_,
+        }
+      )}
       disabled={disabled}
+      style={{ WebkitAppearance: "none", WebkitTapHighlightColor: "transparent" }}
       onClick={onClick}
       {...attributes}
     >
