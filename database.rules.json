@@ -1,10 +1,32 @@
 {
   "rules": {
-    ".read": true,
-    ".write": true,
+    ".read": false,
+    ".write": false,
 
     "games": {
-      ".indexOn": ["createdAt"]
+      ".indexOn": ["createdAt"],
+      "$gameId": {
+        ".read": "true",
+        ".write": "true",
+
+        ".validate": "newData.hasChildren(['id', 'status', 'players', 'currentPlayer', 'ghosts'])",
+
+        "id": {
+          ".validate": "newData.isString() && newData.val() === $gameId"
+        },
+        "status": {
+          ".validate": "newData.isString() && (newData.val() === 'LOBBY' || newData.val() === 'SETUP' || newData.val() === 'RPS' || newData.val() === 'ONGOING' || newData.val() === 'OVER')"
+        },
+        "currentPlayer": {
+          ".validate": "newData.isNumber() && (newData.val() === 0 || newData.val() === 1)"
+        },
+        "players": {
+          ".validate": "newData.isArray() && newData.numChildren() <= 2"
+        },
+        "ghosts": {
+          ".validate": "newData.isArray() && newData.numChildren() <= 16"
+        }
+      }
     }
   }
 }
